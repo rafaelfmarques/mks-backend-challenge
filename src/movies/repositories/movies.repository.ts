@@ -1,9 +1,9 @@
 import { Movies } from '@/database/typeorm/entities/movies.entity';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
 import { Repository } from 'typeorm';
 import { IMovieRepository } from './imovie.repository';
-import { UUID } from 'crypto';
 
 @Injectable()
 export class MovieTypeOrmRepository implements IMovieRepository {

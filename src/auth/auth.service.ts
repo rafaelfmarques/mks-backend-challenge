@@ -13,7 +13,6 @@ export class AuthService {
 
   async signIn(dto: LoginDTO) {
     const user = await this.userRepository.findByEmail(dto.email);
-    const saltOrRounds = 10;
 
     if (!user) throw new UnauthorizedException('User not found');
 

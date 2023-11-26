@@ -1,10 +1,10 @@
 import { Movies } from '@/database/typeorm/entities/movies.entity';
+import { CACHE_KEY } from '@/shared/cache_key';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Injectable } from '@nestjs/common';
+import { Cache } from 'cache-manager';
 import { CreateMovieDto } from '../dto/create-movie.dto';
 import { IMovieRepository } from '../repositories/imovie.repository';
-import { CACHE_MANAGER } from '@nestjs/cache-manager';
-import { CACHE_KEY } from '@/shared/cache_key';
-import { Cache } from 'cache-manager';
 
 @Injectable()
 export class CreateMovieUseCase {

@@ -1,10 +1,10 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { UUID } from 'crypto';
-import { IMovieRepository } from '../repositories/imovie.repository';
-import { UpdateMovieDto } from '../dto/update-movie.dto';
-import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { CACHE_KEY } from '@/shared/cache_key';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Cache } from 'cache-manager';
+import { UUID } from 'crypto';
+import { UpdateMovieDto } from '../dto/update-movie.dto';
+import { IMovieRepository } from '../repositories/imovie.repository';
 
 @Injectable()
 export class UpdateMovieUseCase {

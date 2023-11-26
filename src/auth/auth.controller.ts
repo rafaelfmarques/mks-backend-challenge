@@ -1,8 +1,8 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { Public } from './utils/constants';
-import { LoginDTO } from './dto/login.dto';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { AuthService } from './auth.service';
+import { LoginDTO } from './dto/login.dto';
+import { Public } from './utils/constants';
 
 @Controller('auth')
 export class AuthController {

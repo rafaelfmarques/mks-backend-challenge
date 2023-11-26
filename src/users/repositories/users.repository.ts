@@ -1,10 +1,10 @@
 import { Users } from '@/database/typeorm/entities/users.entity';
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { IUserRepository } from './iuser.repository';
-import { UUID } from 'crypto';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
+import { UUID } from 'crypto';
+import { Repository } from 'typeorm';
+import { IUserRepository } from './iuser.repository';
 
 @Injectable()
 export class UserTypeOrmRepository implements IUserRepository {

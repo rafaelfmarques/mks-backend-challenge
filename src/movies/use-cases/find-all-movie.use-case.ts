@@ -1,8 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { IMovieRepository } from '../repositories/imovie.repository';
-import { CACHE_MANAGER } from '@nestjs/cache-manager';
-import { Cache } from 'cache-manager';
 import { CACHE_KEY } from '@/shared/cache_key';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Inject, Injectable } from '@nestjs/common';
+import { Cache } from 'cache-manager';
+import { IMovieRepository } from '../repositories/imovie.repository';
 
 @Injectable()
 export class FindAllMoviesUseCase {
