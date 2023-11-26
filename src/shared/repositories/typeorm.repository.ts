@@ -1,13 +1,15 @@
-import { ObjectLiteral, Repository } from 'typeorm';
-import { Injectable } from '@nestjs/common';
 import { UUID } from 'crypto';
+import { Connection, EntityTarget, ObjectLiteral, Repository } from 'typeorm';
 import { IRepository } from './irepository.interface';
 
-@Injectable()
 export class TypeOrmRepository<T extends ObjectLiteral>
   implements IRepository<T>
 {
-  constructor(private typeOrmRepo: Repository<T>) {}
+  private typeOrmRepo: Repository<T>;
+
+  constructor(connection: Connection, repo: EntityTarget<T>) {
+    this.typeOrmRepo = connection?.getRepository<T>(repo);
+  }
 
   async create(entity: T): Promise<void> {
     await this.typeOrmRepo.save(entity);

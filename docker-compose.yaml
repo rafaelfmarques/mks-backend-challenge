@@ -2,6 +2,8 @@ version: '3'
 services:
   postgres:
     image: postgres
+    ports:
+      - '5432:5432'
     environment:
       POSTGRES_DB: mks_db
       POSTGRES_USER: mks_user

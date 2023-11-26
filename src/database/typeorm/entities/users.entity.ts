@@ -2,7 +2,7 @@ import { UUID } from 'crypto';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Movies {
+export class Users {
   @PrimaryGeneratedColumn('uuid')
   id: UUID;
 
@@ -14,4 +14,16 @@ export class Movies {
 
   @Column()
   password: string;
+
+  constructor(
+    props: {
+      name: string;
+      email: string;
+      password: string;
+    },
+    id?: UUID,
+  ) {
+    Object.assign(this, props);
+    this.id = id ?? crypto.randomUUID();
+  }
 }

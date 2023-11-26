@@ -1,0 +1,25 @@
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "email": "rafael@teste.com",
+  "password": "Teste@123",
+  "name": "Rafael"
+}
+
+###
+
+GET http://localhost:3000/users/a8e0fb63-1799-4a6d-83e0-4f3a8d123cca
+
+###
+PATCH http://localhost:3000/users/a8e0fb63-1799-4a6d-83e0-4f3a8d123cca
+Content-Type: application/json
+
+{
+  "email": "rafael@teste.com",
+  "password": "Teste@123",
+  "name": "Rafael Fernandes"
+}
+
+###
+DELETE http://localhost:3000/users/a8e0fb63-1799-4a6d-83e0-4f3a8d123cca
