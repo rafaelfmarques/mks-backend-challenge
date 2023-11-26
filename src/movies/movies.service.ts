@@ -1,12 +1,12 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { UUID } from 'crypto';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
-import { FindAllMoviesUseCase } from './use-cases/find-all-movie.use-case';
 import { CreateMovieUseCase } from './use-cases/create-movie.use-case';
-import { FindOneMovieUseCase } from './use-cases/find-one-movie.use-case';
 import { DeleteMovieUseCase } from './use-cases/delete-movie.use-case';
+import { FindAllMoviesUseCase } from './use-cases/find-all-movie.use-case';
+import { FindOneMovieUseCase } from './use-cases/find-one-movie.use-case';
 import { UpdateMovieUseCase } from './use-cases/update-movie.use-case';
-import { UUID } from 'crypto';
 
 @Injectable()
 export class MoviesService {

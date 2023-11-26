@@ -8,9 +8,11 @@ import { TypeOrmConfigService } from './database/typeorm/typeorm.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
+import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
   imports: [
+    CacheModule.register({ isGlobal: true }),
     MoviesModule,
     AuthModule,
     UsersModule,
