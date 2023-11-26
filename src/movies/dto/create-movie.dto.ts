@@ -11,11 +11,7 @@ export class CreateMovieDto {
 
   @IsString()
   @IsNotEmpty()
-  poster: string;
-
-  @IsString()
-  @IsNotEmpty()
-  production: string;
+  producer: string;
 
   @IsDateString()
   @IsNotEmpty()

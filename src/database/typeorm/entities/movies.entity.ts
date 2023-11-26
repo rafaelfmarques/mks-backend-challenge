@@ -20,10 +20,7 @@ export class Movies {
   director: string;
 
   @Column()
-  poster: string;
-
-  @Column()
-  production: string;
+  producer: string;
 
   @Column()
   released: Date;
@@ -35,8 +32,7 @@ export class Movies {
     props: {
       title: string;
       director: string;
-      poster: string;
-      production: string;
+      producer: string;
       released: Date;
       genre: string;
     },

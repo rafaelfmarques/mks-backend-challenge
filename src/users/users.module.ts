@@ -6,7 +6,7 @@ import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import { CreateUserUseCase } from './use-cases/create-user.use-case';
 import { DeleteUserUseCase } from './use-cases/delete-user.use-case';
-import { FindOneUserUseCase } from './use-cases/find-one.use-case';
+import { FindOneUserUseCase } from './use-cases/find-one-user.use-case';
 import { UpdateUserUseCase } from './use-cases/update-user.use-case';
 
 @Module({
@@ -24,5 +24,6 @@ import { UpdateUserUseCase } from './use-cases/update-user.use-case';
       useExisting: UserTypeOrmRepository,
     },
   ],
+  exports: [UserTypeOrmRepository],
 })
 export class UsersModule {}
