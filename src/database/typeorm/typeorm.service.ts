@@ -9,7 +9,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     return {
       type: 'postgres',
       host: process.env.HOST_DB,
-      port: 5432,
+      port: Number(process.env.PORT),
       username: process.env.USERNAME,
       password: process.env.PASSWORD,
       database: process.env.DATABASE,
