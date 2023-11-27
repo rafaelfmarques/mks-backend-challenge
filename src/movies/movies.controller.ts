@@ -10,7 +10,6 @@ import {
 import { MoviesService } from './movies.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
-import { UUID } from 'crypto';
 import { ApiBearerAuth, ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @Controller('movies')
@@ -40,7 +39,7 @@ export class MoviesController {
   @ApiOperation({
     summary: 'List a movie by id',
   })
-  findOne(@Param('id') id: UUID) {
+  findOne(@Param('id') id: string) {
     return this.moviesService.findOne(id);
   }
 
@@ -48,7 +47,7 @@ export class MoviesController {
   @ApiOperation({
     summary: 'Update a movie',
   })
-  update(@Param('id') id: UUID, @Body() updateMovieDto: UpdateMovieDto) {
+  update(@Param('id') id: string, @Body() updateMovieDto: UpdateMovieDto) {
     return this.moviesService.update(id, updateMovieDto);
   }
 
@@ -56,7 +55,7 @@ export class MoviesController {
     summary: 'Delete a movie',
   })
   @Delete(':id')
-  remove(@Param('id') id: UUID) {
+  remove(@Param('id') id: string) {
     return this.moviesService.remove(id);
   }
 }

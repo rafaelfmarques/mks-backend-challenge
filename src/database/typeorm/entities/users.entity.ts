@@ -1,10 +1,10 @@
-import { UUID } from 'crypto';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn('uuid')
-  id: UUID;
+  id: string;
 
   @Column()
   name: string;
@@ -21,9 +21,9 @@ export class Users {
       email: string;
       password: string;
     },
-    id?: UUID,
+    id?: string,
   ) {
     Object.assign(this, props);
-    this.id = id ?? crypto.randomUUID();
+    this.id = id ?? uuidv4();
   }
 }

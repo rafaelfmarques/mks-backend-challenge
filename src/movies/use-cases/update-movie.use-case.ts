@@ -2,7 +2,6 @@ import { CACHE_KEY } from '@/shared/cache_key';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Cache } from 'cache-manager';
-import { UUID } from 'crypto';
 import { UpdateMovieDto } from '../dto/update-movie.dto';
 import { IMovieRepository } from '../repositories/imovie.repository';
 
@@ -14,7 +13,7 @@ export class UpdateMovieUseCase {
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) {}
 
-  async execute(id: UUID, input: UpdateMovieDto) {
+  async execute(id: string, input: UpdateMovieDto) {
     const existingMovie = await this.movieRepo.findById(id);
 
     if (!existingMovie) throw new NotFoundException('Movie not found');

@@ -1,5 +1,4 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { UUID } from 'crypto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { IUserRepository } from '../repositories/iuser.repository';
 
@@ -10,7 +9,7 @@ export class UpdateUserUseCase {
     private readonly userRepo: IUserRepository,
   ) {}
 
-  async execute(id: UUID, input: UpdateUserDto) {
+  async execute(id: string, input: UpdateUserDto) {
     const existingUser = await this.userRepo.findById(id);
 
     if (!existingUser) throw new NotFoundException('User not found');

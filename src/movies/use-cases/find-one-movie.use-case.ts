@@ -1,5 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UUID } from 'crypto';
 import { IMovieRepository } from '../repositories/imovie.repository';
 
 @Injectable()
@@ -9,7 +8,7 @@ export class FindOneMovieUseCase {
     private readonly movieRepo: IMovieRepository,
   ) {}
 
-  async execute(id: UUID) {
+  async execute(id: string) {
     return await this.movieRepo.findById(id);
   }
 }

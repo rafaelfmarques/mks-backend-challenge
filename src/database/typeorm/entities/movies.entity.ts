@@ -1,5 +1,5 @@
-import { UUID } from 'crypto';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
 export enum ProjectStatus {
   Pending = 'pending',
@@ -11,7 +11,7 @@ export enum ProjectStatus {
 @Entity()
 export class Movies {
   @PrimaryGeneratedColumn('uuid')
-  id: UUID;
+  id: string;
 
   @Column()
   title: string;
@@ -36,9 +36,9 @@ export class Movies {
       released: Date;
       genre: string;
     },
-    id?: UUID,
+    id?: string,
   ) {
     Object.assign(this, props);
-    this.id = id ?? crypto.randomUUID();
+    this.id = id ?? uuidv4();
   }
 }

@@ -10,7 +10,6 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { UUID } from 'crypto';
 import { ApiBearerAuth, ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @Controller('users')
@@ -32,7 +31,7 @@ export class UsersController {
     summary: 'List an user by id',
   })
   @Get(':id')
-  findOne(@Param('id') id: UUID) {
+  findOne(@Param('id') id: string) {
     return this.usersService.findOne(id);
   }
 
@@ -40,7 +39,7 @@ export class UsersController {
     summary: 'Update an user',
   })
   @Patch(':id')
-  update(@Param('id') id: UUID, @Body() updateUserDto: UpdateUserDto) {
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(id, updateUserDto);
   }
 
@@ -48,7 +47,7 @@ export class UsersController {
     summary: 'Delete an user',
   })
   @Delete(':id')
-  remove(@Param('id') id: UUID) {
+  remove(@Param('id') id: string) {
     return this.usersService.remove(id);
   }
 }

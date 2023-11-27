@@ -1,5 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UUID } from 'crypto';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { CreateMovieUseCase } from './use-cases/create-movie.use-case';
@@ -33,15 +32,15 @@ export class MoviesService {
     return await this.findAllMoviesUseCase.execute();
   }
 
-  async findOne(id: UUID) {
+  async findOne(id: string) {
     return await this.findOneMovieUseCase.execute(id);
   }
 
-  async update(id: UUID, updateMovieDto: UpdateMovieDto) {
+  async update(id: string, updateMovieDto: UpdateMovieDto) {
     return await this.updateUserUseCase.execute(id, updateMovieDto);
   }
 
-  async remove(id: UUID) {
+  async remove(id: string) {
     return await this.deleteMovieUseCase.execute(id);
   }
 }

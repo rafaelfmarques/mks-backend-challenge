@@ -1,7 +1,6 @@
 import { Movies } from '@/database/typeorm/entities/movies.entity';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UUID } from 'crypto';
 import { Repository } from 'typeorm';
 import { IMovieRepository } from './imovie.repository';
 
@@ -21,12 +20,12 @@ export class MovieTypeOrmRepository implements IMovieRepository {
   async findAll(): Promise<Movies[]> {
     return await this.typeOrmRepo.find();
   }
-  async findById(id: UUID): Promise<Movies | null> {
+  async findById(id: string): Promise<Movies | null> {
     const movie = await this.typeOrmRepo.findOne({ where: { id } });
     if (!movie) throw new NotFoundException('Movie not found');
     return movie;
   }
-  async delete(id: UUID): Promise<void> {
+  async delete(id: string): Promise<void> {
     await this.typeOrmRepo.delete(id);
   }
 }

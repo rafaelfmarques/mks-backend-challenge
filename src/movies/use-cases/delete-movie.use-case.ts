@@ -1,5 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UUID } from 'crypto';
 import { IMovieRepository } from '../repositories/imovie.repository';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
@@ -13,7 +12,7 @@ export class DeleteMovieUseCase {
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) {}
 
-  async execute(id: UUID) {
+  async execute(id: string) {
     await this.cacheManager.del(CACHE_KEY);
     return await this.movieRepo.delete(id);
   }

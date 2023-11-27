@@ -2,7 +2,6 @@ import { Users } from '@/database/typeorm/entities/users.entity';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import { UUID } from 'crypto';
 import { Repository } from 'typeorm';
 import { IUserRepository } from './iuser.repository';
 
@@ -31,13 +30,13 @@ export class UserTypeOrmRepository implements IUserRepository {
     return this.typeOrmRepo.find();
   }
 
-  async findById(id: UUID): Promise<Users | null> {
+  async findById(id: string): Promise<Users | null> {
     const user = await this.typeOrmRepo.findOne({ where: { id } });
     if (!user) throw new NotFoundException('User not found');
     return user;
   }
 
-  async delete(id: UUID): Promise<void> {
+  async delete(id: string): Promise<void> {
     await this.typeOrmRepo.delete(id);
   }
 

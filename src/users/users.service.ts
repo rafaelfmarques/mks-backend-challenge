@@ -3,7 +3,6 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { CreateUserUseCase } from './use-cases/create-user.use-case';
 import { FindOneUserUseCase } from './use-cases/find-one-user.use-case';
-import { UUID } from 'crypto';
 import { DeleteUserUseCase } from './use-cases/delete-user.use-case';
 import { UpdateUserUseCase } from './use-cases/update-user.use-case';
 
@@ -25,15 +24,15 @@ export class UsersService {
     return this.createUserUseCase.execute(createUserDto);
   }
 
-  findOne(id: UUID) {
+  findOne(id: string) {
     return this.findOneUserUseCase.execute(id);
   }
 
-  async update(id: UUID, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateUserDto: UpdateUserDto) {
     return await this.updateUserUseCase.execute(id, updateUserDto);
   }
 
-  remove(id: UUID) {
+  remove(id: string) {
     return this.deleteUserUseCase.execute(id);
   }
 }
