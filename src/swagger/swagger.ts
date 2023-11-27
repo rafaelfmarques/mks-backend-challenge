@@ -12,10 +12,9 @@ export function createDocument(app: INestApplication) {
     )
     .setDescription(SWAGGER_CONFIG.description)
     .setVersion(SWAGGER_CONFIG.version)
-    // .addTag('MOVIES', 'USERS')
     .build();
 
   const document = SwaggerModule.createDocument(app, builder);
 
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('docs', app, document);
 }

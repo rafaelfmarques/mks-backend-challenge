@@ -9,7 +9,7 @@
 
 ## Descrição
 
-Para acessar a documentação: `/api`
+Para acessar a documentação: `/docs`
 
 Email de acesso para login: `mks@mks.com`
 Senha de acesso para login: `Teste@123`
