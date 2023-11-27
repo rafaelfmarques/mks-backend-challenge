@@ -2,11 +2,12 @@ FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
-COPY --chown=node:node package*.json ./
+COPY package*.json ./
 
-RUN npm install --frozen-lockfile
+RUN npm install
 
-COPY --chown=node:node . .
+COPY . .
+
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
-
