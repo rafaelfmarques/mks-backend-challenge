@@ -1,13 +1,11 @@
-FROM node:18
+FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 
-RUN npm install
+RUN npm install --frozen-lockfile
 
-COPY . .
+COPY --chown=node:node . .
 
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+USER node
