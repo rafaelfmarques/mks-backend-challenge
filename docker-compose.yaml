@@ -8,6 +8,3 @@ services:
       POSTGRES_DB: mks_db
       POSTGRES_USER: mks_user
       POSTGRES_PASSWORD: mks_password
-
-  redis:
-    image: redis
