@@ -8,7 +8,5 @@ RUN npm install --frozen-lockfile
 
 COPY --chown=node:node . .
 
-USER node
-
 CMD [ "npm", "start" ]
 
