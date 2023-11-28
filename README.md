@@ -28,6 +28,7 @@ $ npm install
 #Comando docker para subir o banco
 $ docker-compose up
 
+#Inicia o app
 $ npm run start:dev
 
 ```
