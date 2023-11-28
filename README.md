@@ -35,10 +35,16 @@ $ npm run start:dev
 
 ## Experiências com as tecnologias
 
-TypeScript - 2/3 anos
-Nest.js - 2/3 anos
-PostgreSQL - 2/3 anos
-TypeORM - 2/3
-Swagger - 2 anos
-Docker - 1 ano
-Redis - 1 ano
+`TypeScript - 2/3 anos`
+
+`Nest.js - 2/3 anos`
+
+`PostgreSQL - 2/3 anos`
+
+`TypeORM - 2/3`
+
+`Swagger - 2 anos`
+
+`Docker - 1 ano`
+
+`Redis - 1 ano`
