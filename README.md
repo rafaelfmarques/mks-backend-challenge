@@ -5,15 +5,11 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">MKS BACKEND CHALLENGE
+  <p align="center">NESTJS Movies
 
 ## Descrição
 
 Para acessar a documentação: `/docs`
-
-Email de acesso para login: `mks@mks.com`
-
-Senha de acesso para login: `Teste@123`
 
 ## Instalação do projeto
 
@@ -32,19 +28,3 @@ $ docker-compose up
 $ npm run start:dev
 
 ```
-
-## Experiências com as tecnologias
-
-`TypeScript - 2/3 anos`
-
-`Nest.js - 2/3 anos`
-
-`PostgreSQL - 2/3 anos`
-
-`TypeORM - 2/3`
-
-`Swagger - 2 anos`
-
-`Docker - 1 ano`
-
-`Redis - 1 ano`
